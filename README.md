@@ -1,3 +1,11 @@
+This version of the Jitsy Funky prototype will run against an openfire server.  To configure location of openfire update:
+
+1. ./jitsi-meet/config.js
+2. ./app/services/jitsi-api/jitsi-api-config.ts
+3. ./app/models/root-store/setup-root-store.ts
+    -set env.userOverrides to true to read entries in ./jitsi-meet/config.js
+    -set env.ssl to false if you don't have a proper ssl certificate
+
 UI Functionality:
 
 Support video and audio conferences
