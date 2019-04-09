@@ -1,11 +1,5 @@
 This version of the Jitsy Funky prototype will run against an openfire server.  To configure location of openfire update:
 
-1. ./jitsi-meet/config.js
-2. ./app/services/jitsi-api/jitsi-api-config.ts
-3. ./app/models/root-store/setup-root-store.ts
-    -set env.userOverrides to true to read entries in ./jitsi-meet/config.js
-    -set env.ssl to false if you don't have a proper ssl certificate
-
 UI Functionality:
 
 Support video and audio conferences
@@ -32,6 +26,12 @@ INSTALLATION INSTRUCTIONS:
 4. open 2 terminals and make sure you are in the root directory:
 5. run npm start — — reset-cache
 6. run react-native run-ios — device ( TO RUN ON THE DEVICE YOU WILL NEED TO SIGN THE PROJECT IN XCODE )
+
+The prototype is configured to connect to an openfire server running on localhost.  To connect to a different machine you have to do the following:
+
+1. Update ./app/servers/jitsi-api/jitsi-api-config.ts with the appropriate base url to get the server config file.  The url is http://localhost:7070/ofmeet/config.js without ssl and https://localhost:7443/ofmeet/config.js with ssl
+2. Update ./jitsi-meet/config.js if you need to override any of the values in the config.  If nothing needs to be overriden make sure the config is empty or hasOverrides in ./app/models/root-store/setup-root-store.ts is set to false
+3. also update ssl in ./app/models/root-store/setup-root-store.ts.  Set to true if ssl for the server is enabled, otherwise leave false
 
 More details here:
 
