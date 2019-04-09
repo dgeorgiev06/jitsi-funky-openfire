@@ -1,4 +1,4 @@
-This version of the Jitsy Funky prototype will run against an openfire server.  To configure location of openfire update:
+This version of the Jitsy Funky prototype will run against an openfire server. 
 
 UI Functionality:
 
@@ -29,10 +29,10 @@ INSTALLATION INSTRUCTIONS:
 
 The prototype is configured to connect to an openfire server running on localhost.  To connect to a different machine you have to do the following:
 
-1. Update ./app/servers/jitsi-api/jitsi-api-config.ts with the appropriate base url to get the server config file.  The url is http://localhost:7070/ofmeet/config.js without ssl and https://localhost:7443/ofmeet/config.js with ssl
+1. Update ./app/servers/jitsi-api/jitsi-api-config.ts with the appropriate base url. For localhost you will need to use your machine's current IP address. Also make sure to specify the right port: 7070 without ssl and 7443 with ssl.  When the app starts up it will make a rest call to openfire to retrieve configurations for establishing xmpp connection
 2. Update ./jitsi-meet/config.js if you need to override any of the values in the config.  If nothing needs to be overriden make sure the config is empty or hasOverrides in ./app/models/root-store/setup-root-store.ts is set to false
-3. also update ssl in ./app/models/root-store/setup-root-store.ts.  Set to true if ssl for the server is enabled, otherwise leave false
+3. also update ssl in ./app/models/root-store/setup-root-store.ts.  Set to true if ssl for the server is enabled, otherwise leave false.
 
-More details here:
+To learn more about this prototype follow the link below:
 
 https://medium.com/@dgeorgiev06/chat-and-video-conference-app-with-react-native-ignite-lib-jitsi-meet-react-native-callkit-21089944ba54
